@@ -1,6 +1,8 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
@@ -30,6 +32,18 @@ kotlin {
 
 dependencies {
   add("kspCommonMainMetadata", projects.inikioKsp)
+}
+
+tasks.withType<KotlinJsCompile> {
+  dependsOn("kspCommonMainKotlinMetadata")
+}
+
+tasks.getByName("jsSourcesJar") {
+  dependsOn("kspCommonMainKotlinMetadata")
+}
+
+tasks.withType<KotlinJvmCompile> {
+  dependsOn("kspCommonMainKotlinMetadata")
 }
 
 tasks.withType<KotlinCompile> {
