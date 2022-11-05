@@ -1,7 +1,7 @@
 package fp.serrano.inikio.examples
 
-import fp.serrano.inikio.FixedResultType
-import fp.serrano.inikio.InitialStyleDSL
+import fp.serrano.inikio.plugin.FixedResultType
+import fp.serrano.inikio.plugin.InitialStyleDSL
 
 @InitialStyleDSL
 @FixedResultType("kotlin.Int")

@@ -32,6 +32,7 @@ tasks.withType<KotlinCompile> {
 
 tasks.dokkaHtml.configure {
   outputDirectory.set(rootDir.resolve("docs"))
+  moduleName.set("Inikio")
   dokkaSourceSets {
     named("commonMain") {
       includes.from("README.md")

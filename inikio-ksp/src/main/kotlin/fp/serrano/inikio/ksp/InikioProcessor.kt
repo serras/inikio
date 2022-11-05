@@ -6,8 +6,7 @@ import com.google.devtools.ksp.symbol.*
 import com.squareup.kotlinpoet.*
 import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.squareup.kotlinpoet.ksp.*
-import fp.serrano.inikio.FixedResultType
-import fp.serrano.inikio.InitialStyleDSL
+import fp.serrano.inikio.plugin.*
 import fp.serrano.inikio.ProgramBuilder
 import java.util.*
 

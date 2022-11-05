@@ -1,6 +1,6 @@
 package fp.serrano.inikio.examples
 
-import fp.serrano.inikio.InitialStyleDSL
+import fp.serrano.inikio.plugin.InitialStyleDSL
 import fp.serrano.inikio.util.repeat
 import kotlin.random.Random
 

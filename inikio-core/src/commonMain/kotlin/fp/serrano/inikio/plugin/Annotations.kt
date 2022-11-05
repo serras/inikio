@@ -1,7 +1,7 @@
-package fp.serrano.inikio
+package fp.serrano.inikio.plugin
 
 /**
- * Instructs inikio's KSP plug-in to create a Builder based on this hierarchy.
+ * Instructs Inikio's KSP plug-in to create a Builder based on this hierarchy.
  */
 public annotation class InitialStyleDSL()
 
