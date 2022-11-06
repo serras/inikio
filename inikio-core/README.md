@@ -13,7 +13,20 @@
   * <a href="-inikio/fp.serrano.inikio.util/index.html">Utilities</a>
 * <a href="#suspended-syntax"><code>suspend</code>ed syntax</a>
   * <a href="-inikio/fp.serrano.inikio.plugin/index.html">Compiler plug-in</a>
-* <a href="https://github.com/serras/inikio/tree/main/inikio-examples/src/commonMain/kotlin/fp/serrano/inikio/examples">Examples of DSLs</a> 
+* <a href="https://github.com/serras/inikio/tree/main/inikio-examples/src/commonMain/kotlin/fp/serrano/inikio/examples">Examples of DSLs</a>
+
+<h3 id="gradle-setup">Gradle set-up</h3>
+
+Inikio is available through [Jitpack](https://jitpack.io/).
+
+```kotlin
+repositories {
+  maven(url = "https://jitpack.io")
+}
+dependencies {
+  implementation("com.github.serras.inikio:inikio-core:$inikioVersion")
+}
+```
 
 <h3 id="initial-style-dsls">Initial-style DSLs</h3>
 
