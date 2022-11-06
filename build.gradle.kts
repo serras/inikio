@@ -1,9 +1,9 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
-group = "fp.serrano"
-version = "1.0-SNAPSHOT"
-
 allprojects {
+    group = "com.github.serras.inikio"
+    version = "0.1-SNAPSHOT"
+
     repositories {
         mavenCentral()
     }
