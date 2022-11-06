@@ -1,7 +1,9 @@
 # Module Inikio
 
-> Better initial-style DSLs in Kotlin <a href="https://github.com/serras/inikio">
-<img src="https://badgen.net/github/stars/serras/inikio?style=social&label=GitHub stars" />
+> Better initial-style DSLs in Kotlin &nbsp;&nbsp; <a href="https://github.com/serras/inikio">
+<img src="https://badgen.net/github/stars/serras/inikio?style=social&label=GitHub stars" style="display: inline;" />
+</a> <a href="https://github.com/serras/inikio/releases/">
+<img src="https://badgen.net/github/release/serras/inikio?style=social&label=Latest release" style="display: inline;" />
 </a>
 
 <br />
@@ -107,19 +109,25 @@ Information about Inikio's compiler plug-in, that creates `Builder`s automatical
 
 ### Step 1, add the plug-in to your build
 
-The plug-in is based on [KSP](https://kotlinlang.org/docs/ksp-overview.html). If you are using Gradle you need to add the following to your build file.
+The plug-in is based on [KSP](https://kotlinlang.org/docs/ksp-overview.html). If you are using Gradle you need to add the following to your build file. <a href="https://github.com/serras/inikio/releases/">
+<img src="https://badgen.net/github/release/serras/inikio?style=social&label=inikioVersion" style="display: inline;" />
+</a>
 
 ```kotlin
 repositories {
   mavenCentral()
+  maven(url = "https://jitpack.io")
 }
 plugins {
   id("com.google.devtools.ksp") version "1.7.20-1.0.8"
 }
 dependencies {
-  ksp("fp.serrano:inikio-ksp:$inikioVersion")
+  implementation("com.github.serras.inikio:inikio-core:$inikioVersion")
+  ksp("com.github.serras.inikio:inikio-ksp:$inikioVersion")
 }
 ```
+
+If IntelliJ is your IDE of choice, we recommend [configuring your build to make it aware of KSP](https://kotlinlang.org/docs/ksp-quickstart.html#make-ide-aware-of-generated-code).
 
 ### Step 2, annotate your DSLs
 
