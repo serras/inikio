@@ -1,7 +1,6 @@
 package fp.serrano.inikio.examples
 
 import fp.serrano.inikio.plugin.InitialStyleDSL
-import fp.serrano.inikio.util.repeat
 import kotlin.random.Random
 
 sealed interface Card
@@ -35,7 +34,11 @@ suspend fun <A> AttackBuilder<A>.drawNRecursive(n: Int): List<Card> = when {
 }
 
 suspend fun <A> AttackBuilder<A>.drawNUtility(n: Int): List<Card> =
-  repeat(n) { draw() }.filterNotNull()
+  buildList {
+    repeat(n) {
+      add(draw())
+    }
+  }.filterNotNull()
 
 // EXECUTION OF A PROGRAM
 // ----------------------

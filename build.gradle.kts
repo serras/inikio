@@ -2,7 +2,7 @@
 
 allprojects {
     group = "com.github.serras.inikio"
-    version = "0.1-SNAPSHOT"
+    version = "0.2-SNAPSHOT"
 
     repositories {
         mavenCentral()

@@ -9,6 +9,7 @@ import com.squareup.kotlinpoet.ksp.*
 import fp.serrano.inikio.plugin.*
 import fp.serrano.inikio.ProgramBuilder
 import java.util.*
+import kotlin.coroutines.RestrictsSuspension
 
 @OptIn(KspExperimental::class)
 class InikioProcessor(
@@ -53,7 +54,7 @@ class InikioProcessor(
       `do` {
         addType(
           BuilderWrapper(TypeSpec.classBuilder(builderName), { build() }) {
-            // `do` { addAnnotation(RestrictsSuspension::class) }
+            `do` { addAnnotation(RestrictsSuspension::class) }
             if (hasTypeArgs) {
               `do` { addTypeVariables(typeArgs) }
             }
