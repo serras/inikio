@@ -15,8 +15,8 @@ dependencies {
   implementation(libs.kotlinPoet.ksp)
 }
 
-tasks.withType<KotlinCompile> {
-  kotlinOptions.jvmTarget = "1.8"
+kotlin {
+  jvmToolchain(8)
 }
 
 publishing {

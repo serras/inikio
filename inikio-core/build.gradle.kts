@@ -9,7 +9,9 @@ plugins {
 }
 
 kotlin {
-  jvm()
+  jvm {
+    jvmToolchain(8)
+  }
   js {
     browser()
     nodejs()
@@ -25,10 +27,6 @@ kotlin {
       }
     }
   }
-}
-
-tasks.withType<KotlinCompile> {
-  kotlinOptions.jvmTarget = "1.8"
 }
 
 tasks.dokkaHtml.configure {

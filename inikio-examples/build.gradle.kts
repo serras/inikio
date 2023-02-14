@@ -11,7 +11,9 @@ plugins {
 }
 
 kotlin {
-  jvm()
+  jvm {
+    jvmToolchain(8)
+  }
   js {
     browser()
     nodejs()
@@ -44,10 +46,6 @@ tasks.getByName("jsSourcesJar") {
 
 tasks.withType<KotlinJvmCompile> {
   dependsOn("kspCommonMainKotlinMetadata")
-}
-
-tasks.withType<KotlinCompile> {
-  kotlinOptions.jvmTarget = "1.8"
 }
 
 idea {
