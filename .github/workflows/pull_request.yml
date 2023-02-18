@@ -32,7 +32,7 @@ jobs:
           java-version: 11
 
       - name: build
-        uses: gradle/gradle-build-action@v2.3.3
+        uses: gradle/gradle-build-action@v2.4.0
         with:
           arguments: --full-stacktrace build
 
@@ -64,7 +64,7 @@ jobs:
         run: rm -rf docs
 
       - name: Format
-        uses: gradle/gradle-build-action@v2.3.3
+        uses: gradle/gradle-build-action@v2.4.0
         with:
           arguments: :inikio-core:dokkaHtml
 
