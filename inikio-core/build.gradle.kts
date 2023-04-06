@@ -1,7 +1,5 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
   alias(libs.plugins.dokka)
@@ -12,7 +10,7 @@ kotlin {
   jvm {
     jvmToolchain(8)
   }
-  js {
+  js(IR) {
     browser()
     nodejs()
   }

@@ -1,7 +1,5 @@
 @file:Suppress("DSL_SCOPE_VIOLATION")
 
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
   alias(libs.plugins.kotlin.jvm)
   `maven-publish`
