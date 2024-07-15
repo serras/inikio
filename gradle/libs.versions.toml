@@ -2,7 +2,7 @@
 kotlin = "2.0.0"
 dokka = "1.8.20"
 ksp = "1.8.22-1.0.11"
-kotlinPoet = "1.16.0"
+kotlinPoet = "1.18.1"
 ktlint = "11.3.1"
 
 [libraries]
