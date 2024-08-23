@@ -10,16 +10,14 @@ plugins {
 }
 
 kotlin {
-  jvm {
-    jvmToolchain(8)
-  }
+  jvmToolchain(8)
+  jvm()
+
   js(IR) {
     browser()
     nodejs()
   }
-}
-
-kotlin {
+  
   sourceSets {
     commonMain {
       dependencies {

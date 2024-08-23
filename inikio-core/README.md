@@ -127,7 +127,7 @@ repositories {
   maven(url = "https://jitpack.io")
 }
 plugins {
-  id("com.google.devtools.ksp") version "1.7.22-1.0.8"
+  id("com.google.devtools.ksp") version "2.0.20-1.0.24"
 }
 dependencies {
   implementation("com.github.serras.inikio:inikio-core:$inikioVersion")
