@@ -1,1 +1,1 @@
-sourceset_dependencies='{":inikio-core:dokkaHtml/commonMain":[],":inikio-core:dokkaHtml/jsMain":[":inikio-core:dokkaHtml/commonMain"],":inikio-core:dokkaHtml/jvmMain":[":inikio-core:dokkaHtml/commonMain"]}'
+sourceset_dependencies='{":inikio-core/commonMain":[],":inikio-core/jsMain":[":inikio-core/commonMain"],":inikio-core/jvmMain":[":inikio-core/commonMain"]}'

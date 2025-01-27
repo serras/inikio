@@ -26,19 +26,19 @@ kotlin {
   }
 }
 
-tasks.dokkaHtml.configure {
-  outputDirectory.set(rootDir.resolve("docs"))
+dokka {
   moduleName.set("Inikio")
-  dokkaSourceSets {
-    named("commonMain") {
-      includes.from("README.md")
-    }
+  dokkaSourceSets.commonMain {
+    includes.from("README.md")
+  }
+  dokkaPublications.html {
+    outputDirectory.set(rootDir.resolve("docs"))
   }
 }
 
 val javadocJar by tasks.registering(Jar::class) {
   archiveClassifier.set("javadoc")
-  from(tasks.dokkaHtml)
+  from(tasks.dokkaGenerate)
 }
 
 publishing {

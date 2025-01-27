@@ -26,78 +26,121 @@
 <link href="../../styles/prism.css" rel="Stylesheet">
 <link href="../../styles/logo-styles.css" rel="Stylesheet">
 <link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
 <script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
 <script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
     <div class="root">
-<nav class="navigation" id="navigation-wrapper">
-    <div class="navigation--inner">
-        <div class="navigation-title">
-            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
-            <div class="library-name">
-                    <a class="library-name--link" href="../../index.html">
-                            Inikio
-                    </a>
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    Inikio
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.2-SNAPSHOT        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector common-like" data-active=""
+                        data-filter=":inikio-core/commonMain">common</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option common-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":inikio-core/commonMain"
+                                       data-filter=":inikio-core/commonMain"/>
+                                <span class="checkbox--icon"></span>
+                                common
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div class="library-version">
-0.2-SNAPSHOT            </div>
         </div>
-        <div class="filter-section" id="filter-section">
-                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":inikio-core:dokkaHtml/commonMain">common</button>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
         </div>
-    </div>
-    <div class="navigation-controls">
-        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
-        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
-    </div>
-</nav>
+    </nav>
         <div id="container">
             <div class="sidebar" id="leftColumn">
-                <div class="sidebar--inner" id="sideMenu"></div>
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    Inikio
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="package" id="content" pageIds="Inikio::fp.serrano.inikio.plugin////PointingToDeclaration//-167733409">
+<div class="main-content" data-page-type="package" id="content" pageIds="Inikio::fp.serrano.inikio.plugin////PointingToDeclaration//-1053437704">
   <div class="breadcrumbs"><a href="../../index.html">Inikio</a><span class="delimiter">/</span><span class="current">fp.serrano.inikio.plugin</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
-    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core:dokkaHtml/commonMain"><p class="paragraph">Information about Inikio's compiler plug-in, that creates <code class="lang-kotlin">Builder</code>s automatically for your initial-style DSLs.</p><h3 class="">Step 1, add the plug-in to your build</h3><p class="paragraph">The plug-in is based on <a href="https://kotlinlang.org/docs/ksp-overview.html">KSP</a>. If you are using Gradle you need to add the following to your build file. <a href="https://github.com/serras/inikio/releases/"> <img src="https://badgen.net/github/release/serras/inikio?style=social&label=inikioVersion" style="display: inline;" /> </a></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">repositories {<br>  mavenCentral()<br>  maven(url = &quot;https://jitpack.io&quot;)<br>}<br>plugins {<br>  id(&quot;com.google.devtools.ksp&quot;) version &quot;2.0.20-1.0.24&quot;<br>}<br>dependencies {<br>  implementation(&quot;com.github.serras.inikio:inikio-core:$inikioVersion&quot;)<br>  ksp(&quot;com.github.serras.inikio:inikio-ksp:$inikioVersion&quot;)<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">If IntelliJ is your IDE of choice, we recommend <a href="https://kotlinlang.org/docs/ksp-quickstart.html#make-ide-aware-of-generated-code">configuring your build to make it aware of KSP</a>.</p><h3 class="">Step 2, annotate your DSLs</h3><p class="paragraph">You only need to add the <code class="lang-kotlin">@InitialStyleDSL</code> annotation to the top of your hierarchy. Remember that you need to have one &quot;finished&quot; variant, in the example below is <code class="lang-kotlin">Done</code>.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">@InitialStyleDSL<br>sealed interface Casino&lt;out A&gt;<br>data class Done&lt;out A&gt;(val result: A): Casino&lt;A&gt;<br>data class FlipCoin&lt;out A&gt;(val next: (Outcome) -&gt; Casino&lt;A&gt;): Casino&lt;A&gt; {<br>  enum class Outcome { HEADS, TAILS }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Step 3, enjoy your new <code class="lang-kotlin">Builder</code></h3><p class="paragraph">From the definition above the plug-in generates a <code class="lang-kotlin">Builder</code> class and a runner function.</p><ul><li><p class="paragraph">The <code class="lang-kotlin">Builder</code> class contains a method for each variant in the DSL, that is, for each basic instruction in your DSL.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">  class CasinoBuilder&lt;A&gt; {<br>    suspend fun flipCoin(): FlipCoin.Outcome<br>  }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">The runner function takes a block with the <code class="lang-kotlin">Builder</code> as receiver, and converts it into the initial-style DSL.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">  fun &lt;A&gt; casino(block: CasinoBuilder&lt;A&gt;.() -&gt; A): Casino&lt;A&gt;</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li></ul><p class="paragraph">You can use the combination of the runner and the <code class="lang-kotlin">Builder</code> methods to create values of your initial-style DSL. For example, the following defines a game when only two heads win.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val doubleCoin = casino {<br>  val o1 = flipCoin()<br>  val o2 = flipCoin()<br>  if (o1 == Outcome.HEADS &amp;&amp; o2 == Outcome.HEADS) WIN<br>  else LOSE<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Note the much nicer syntax with <code class="lang-kotlin">suspend</code> that what you'd get with the data classes themselves. In particular, all the nesting is gone, and there's no need to call the final <code class="lang-kotlin">Done</code>. The code above is equivalent to the following.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val casino =<br>  FlipCoin { o1 -&gt;<br>    FlipCoin { o2 -&gt;<br>      if (o1 == Outcome.HEADS &amp;&amp; o2 == Outcome.HEADS) <br>        Done(WIN)<br>      else<br>        Done(LOSE)<br>    }<br>  }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core/commonMain"><p class="paragraph">Information about Inikio's compiler plug-in, that creates <code class="lang-kotlin">Builder</code>s automatically for your initial-style DSLs.</p><h3 class="">Step 1, add the plug-in to your build</h3><p class="paragraph">The plug-in is based on <a href="https://kotlinlang.org/docs/ksp-overview.html">KSP</a>. If you are using Gradle you need to add the following to your build file. <a href="https://github.com/serras/inikio/releases/"> <img src="https://badgen.net/github/release/serras/inikio?style=social&label=inikioVersion" style="display: inline;" /> </a></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">repositories {<br>  mavenCentral()<br>  maven(url = &quot;https://jitpack.io&quot;)<br>}<br>plugins {<br>  id(&quot;com.google.devtools.ksp&quot;) version &quot;2.0.20-1.0.24&quot;<br>}<br>dependencies {<br>  implementation(&quot;com.github.serras.inikio:inikio-core:$inikioVersion&quot;)<br>  ksp(&quot;com.github.serras.inikio:inikio-ksp:$inikioVersion&quot;)<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">If IntelliJ is your IDE of choice, we recommend <a href="https://kotlinlang.org/docs/ksp-quickstart.html#make-ide-aware-of-generated-code">configuring your build to make it aware of KSP</a>.</p><h3 class="">Step 2, annotate your DSLs</h3><p class="paragraph">You only need to add the <code class="lang-kotlin">@InitialStyleDSL</code> annotation to the top of your hierarchy. Remember that you need to have one &quot;finished&quot; variant, in the example below is <code class="lang-kotlin">Done</code>.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">@InitialStyleDSL<br>sealed interface Casino&lt;out A&gt;<br>data class Done&lt;out A&gt;(val result: A): Casino&lt;A&gt;<br>data class FlipCoin&lt;out A&gt;(val next: (Outcome) -&gt; Casino&lt;A&gt;): Casino&lt;A&gt; {<br>  enum class Outcome { HEADS, TAILS }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Step 3, enjoy your new <code class="lang-kotlin">Builder</code></h3><p class="paragraph">From the definition above the plug-in generates a <code class="lang-kotlin">Builder</code> class and a runner function.</p><ul><li><p class="paragraph">The <code class="lang-kotlin">Builder</code> class contains a method for each variant in the DSL, that is, for each basic instruction in your DSL.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">  class CasinoBuilder&lt;A&gt; {<br>    suspend fun flipCoin(): FlipCoin.Outcome<br>  }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">The runner function takes a block with the <code class="lang-kotlin">Builder</code> as receiver, and converts it into the initial-style DSL.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">  fun &lt;A&gt; casino(block: CasinoBuilder&lt;A&gt;.() -&gt; A): Casino&lt;A&gt;</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li></ul><p class="paragraph">You can use the combination of the runner and the <code class="lang-kotlin">Builder</code> methods to create values of your initial-style DSL. For example, the following defines a game when only two heads win.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val doubleCoin = casino {<br>  val o1 = flipCoin()<br>  val o2 = flipCoin()<br>  if (o1 == Outcome.HEADS &amp;&amp; o2 == Outcome.HEADS) WIN<br>  else LOSE<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Note the much nicer syntax with <code class="lang-kotlin">suspend</code> that what you'd get with the data classes themselves. In particular, all the nesting is gone, and there's no need to call the final <code class="lang-kotlin">Done</code>. The code above is equivalent to the following.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val casino =<br>  FlipCoin { o1 -&gt;<br>    FlipCoin { o2 -&gt;<br>      if (o1 == Outcome.HEADS &amp;&amp; o2 == Outcome.HEADS) <br>        Done(WIN)<br>      else<br>        Done(LOSE)<br>    }<br>  }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
         <h2 class="">Types</h2>
-        <div class="table"><a data-name="-1344929341%2FClasslikes%2F-167733409" anchor-label="FixedResultType" id="-1344929341%2FClasslikes%2F-167733409" data-filterable-set=":inikio-core:dokkaHtml/commonMain"></a>
-          <div class="table-row" data-filterable-current=":inikio-core:dokkaHtml/commonMain" data-filterable-set=":inikio-core:dokkaHtml/commonMain">
+        <div class="table"><a data-name="-1344929341%2FClasslikes%2F-1053437704" anchor-label="FixedResultType" id="-1344929341%2FClasslikes%2F-1053437704" data-filterable-set=":inikio-core/commonMain"></a>
+          <div class="table-row" data-filterable-current=":inikio-core/commonMain" data-filterable-set=":inikio-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-fixed-result-type/index.html"><span>Fixed</span><wbr></wbr><span>Result</span><wbr></wbr><span><span>Type</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344929341%2FClasslikes%2F-167733409"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1344929341%2FClasslikes%2F-1053437704"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-fixed-result-type/index.html">FixedResultType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>type<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Indicates that this DSL has a fixed result type, instead of being polymorphic on the result type.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core/commonMain"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-fixed-result-type/index.html">FixedResultType</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>type<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Indicates that this DSL has a fixed result type, instead of being polymorphic on the result type.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="182797118%2FClasslikes%2F-167733409" anchor-label="InitialStyleDSL" id="182797118%2FClasslikes%2F-167733409" data-filterable-set=":inikio-core:dokkaHtml/commonMain"></a>
-          <div class="table-row" data-filterable-current=":inikio-core:dokkaHtml/commonMain" data-filterable-set=":inikio-core:dokkaHtml/commonMain">
+<a data-name="182797118%2FClasslikes%2F-1053437704" anchor-label="InitialStyleDSL" id="182797118%2FClasslikes%2F-1053437704" data-filterable-set=":inikio-core/commonMain"></a>
+          <div class="table-row" data-filterable-current=":inikio-core/commonMain" data-filterable-set=":inikio-core/commonMain">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-initial-style-d-s-l/index.html"><span>Initial</span><wbr></wbr><span>Style</span><wbr></wbr><span><span>DSL</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="182797118%2FClasslikes%2F-167733409"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="182797118%2FClasslikes%2F-1053437704"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-initial-style-d-s-l/index.html">InitialStyleDSL</a></div><div class="brief "><p class="paragraph">Instructs Inikio's KSP plug-in to create a Builder based on this hierarchy.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":inikio-core/commonMain"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="-initial-style-d-s-l/index.html">InitialStyleDSL</a></div><div class="brief "><p class="paragraph">Instructs Inikio's KSP plug-in to create a Builder based on this hierarchy.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -107,11 +150,16 @@
     </div>
   </div>
 </div>
-      <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
-                class="pull-right"><span>Generated by </span><a
-                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
-      </div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
             </div>
         </div>
     </div>
