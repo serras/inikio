@@ -27,10 +27,13 @@ jobs:
           distribution: 'adopt'
           java-version: 11
 
-      - name: build
-        uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          arguments: --full-stacktrace build
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Build
+        run: ./gradlew --full-stacktrace build
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
@@ -59,15 +62,18 @@ jobs:
       - name: Checkout
         run: rm -rf docs
 
-      - name: Format
-        uses: gradle/gradle-build-action@v2
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          arguments: :inikio-core:dokkaHtml
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Build
+        run: ./gradlew --full-stacktrace :inikio-core:dokkaGenerate
 
       - name: Stop Gradle daemons
         run: ./gradlew --stop
 
-      - name: "Commit formatted files"
+      - name: Commit updated documentation
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update documentation
