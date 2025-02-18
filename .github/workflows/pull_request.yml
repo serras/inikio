@@ -67,7 +67,7 @@ jobs:
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
-      - name: Build
+      - name: Generate update documentation
         run: ./gradlew --full-stacktrace :inikio-core:dokkaGenerate
 
       - name: Stop Gradle daemons
