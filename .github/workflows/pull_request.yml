@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 17
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
@@ -33,7 +33,7 @@ jobs:
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Build
-        run: ./gradlew --full-stacktrace build
+        run: ./gradlew build
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
@@ -57,7 +57,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'adopt'
-          java-version: 11
+          java-version: 17
 
       - name: Checkout
         run: rm -rf docs
@@ -68,7 +68,7 @@ jobs:
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Generate update documentation
-        run: ./gradlew --full-stacktrace :inikio-core:dokkaGenerate
+        run: ./gradlew :inikio-core:dokkaGenerate
 
       - name: Stop Gradle daemons
         run: ./gradlew --stop
