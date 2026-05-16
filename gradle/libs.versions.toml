@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.3.21"
 dokka = "2.2.0"
-ksp = "2.2.10-2.0.2"
+ksp = "2.3.8"
 kotlinPoet = "2.3.0"
 
 [libraries]
