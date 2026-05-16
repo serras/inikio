@@ -1,1 +1,1 @@
-sourceset_dependencies='{":inikio-core/commonMain":[],":inikio-core/jsMain":[":inikio-core/commonMain"],":inikio-core/jvmMain":[":inikio-core/commonMain"]}'
+sourceset_dependencies='{":inikio-core/commonMain":[],":inikio-core/jsMain":[":inikio-core/webMain"],":inikio-core/jvmMain":[":inikio-core/commonMain"],":inikio-core/webMain":[":inikio-core/commonMain"]}'
